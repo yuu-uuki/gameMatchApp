@@ -14,6 +14,7 @@
 		2A92632A2866CB2F0096CD3D /* gameMatchAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9263292866CB2F0096CD3D /* gameMatchAppTests.swift */; };
 		2A9263342866CB2F0096CD3D /* gameMatchAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9263332866CB2F0096CD3D /* gameMatchAppUITests.swift */; };
 		2A9263362866CB2F0096CD3D /* gameMatchAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9263352866CB2F0096CD3D /* gameMatchAppUITestsLaunchTests.swift */; };
+		2ABEA55F286FDD6800917F8D /* Color+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ABEA55E286FDD6800917F8D /* Color+Helper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		2A92632F2866CB2F0096CD3D /* gameMatchAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = gameMatchAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A9263332866CB2F0096CD3D /* gameMatchAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gameMatchAppUITests.swift; sourceTree = "<group>"; };
 		2A9263352866CB2F0096CD3D /* gameMatchAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gameMatchAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		2ABEA55E286FDD6800917F8D /* Color+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Helper.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 				2A92631A2866CB280096CD3D /* ContentView.swift */,
 				2A92631C2866CB2F0096CD3D /* Assets.xcassets */,
 				2A92631E2866CB2F0096CD3D /* Preview Content */,
+				2ABEA55E286FDD6800917F8D /* Color+Helper.swift */,
 			);
 			path = gameMatchApp;
 			sourceTree = "<group>";
@@ -259,6 +262,7 @@
 			files = (
 				2A92631B2866CB280096CD3D /* ContentView.swift in Sources */,
 				2A9263192866CB280096CD3D /* gameMatchAppApp.swift in Sources */,
+				2ABEA55F286FDD6800917F8D /* Color+Helper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

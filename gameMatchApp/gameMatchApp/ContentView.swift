@@ -11,7 +11,7 @@ struct ContentView: View {
   @State var labelText = "Hello SwiftUI"
   var body: some View {
     ZStack {
-      Color.red
+      Color.white
         .edgesIgnoringSafeArea(.all)
       
       VStack(spacing: 20) {
