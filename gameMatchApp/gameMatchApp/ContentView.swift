@@ -7,6 +7,11 @@
 
 import SwiftUI
 
+enum ButtonType {
+  case create
+  case login
+}
+
 struct ContentView: View {
   @State var labelText = "Hello SwiftUI"
   var body: some View {
@@ -16,15 +21,18 @@ struct ContentView: View {
       Color.white
         .edgesIgnoringSafeArea(.all)
       VStack(alignment: .center) {
-        Image("no_image")
+        // アプリアイコン
+        Image(ImageName.no)
           .resizable()
           .frame(width: model.baseWidth, height: model.baseWidth, alignment: .top)
         
-        Spacer().frame(height: model.viewSpace)
+        Spacer().frame(height: model.imageButtonSpace)
         
-        VStack(spacing: 20) {
-          ButtonView("create account", height: 30, width: model.baseWidth)
-          ButtonView("Login", height: 30, width: model.baseWidth)
+        VStack(spacing: model.baseWidth * 0.2) {
+          // アカウント作成ボタン
+          ButtonView(TopChar.create, model: model, type: .create)
+          // ログインボタン
+          ButtonView(TopChar.login, model: model, type: .login)
         }
         
       }.position(x: model.baseWidth, y: model.baseHeight)
@@ -44,11 +52,23 @@ struct ButtonView: View {
   let height: CGFloat
   let width: CGFloat
   let bounds = UIScreen.main.bounds
+  let type: ButtonType
+  let baseColor: Color
+  let textColor: Color
   
-  init(_ text: String, height: CGFloat, width: CGFloat) {
+  init(_ text: String, model:TopViewModel, type: ButtonType) {
     self.text  = text
-    self.height = height
-    self.width = width
+    self.height = model.baseWidth * 0.27
+    self.width = model.baseWidth * 1.5
+    self.type = type
+    switch type {
+    case .create:
+      baseColor = Color.white
+      textColor = Color.baseColor
+    case .login:
+      baseColor = Color.baseColor
+      textColor = Color.white
+    }
   }
   
   var body: some View {
@@ -56,11 +76,16 @@ struct ButtonView: View {
       
     }) {
       Text(self.text)
-        .font(.title)
-        .foregroundColor(.black)
-        .fontWeight(.bold)
+        .font(.custom(FontName.basic, size: 28))
+        .minimumScaleFactor(0.1)
+        .foregroundColor(textColor)
         .frame(width: width, height: height)
-        .border(.black, width: 2)
+        .background(baseColor)
+        .cornerRadius(height / 2)
+        .overlay(
+          RoundedRectangle(cornerRadius: height / 2)
+            .stroke(Color.baseColor, lineWidth: 3)
+        )
     }
   }
 }

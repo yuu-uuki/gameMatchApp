@@ -13,13 +13,14 @@ class TopViewModel {
   let height: CGFloat
   let baseHeight: CGFloat
   let baseWidth: CGFloat
-  let viewSpace: CGFloat = 200
+  let imageButtonSpace: CGFloat
   
   init(bounds: CGRect) {
     self.width = bounds.width
     self.height = bounds.height
     self.baseWidth = bounds.width / 2
-    self.baseHeight = bounds.height / 2.5
+    self.baseHeight = bounds.height / 2
+    self.imageButtonSpace = bounds.height / 4
   }
   
 }
