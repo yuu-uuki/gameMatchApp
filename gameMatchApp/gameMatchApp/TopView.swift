@@ -12,7 +12,7 @@ enum ButtonType {
   case login
 }
 
-struct ContentView: View {
+struct TopView: View {
   @State var labelText = "Hello SwiftUI"
   var body: some View {
     let bounds = UIScreen.main.bounds
@@ -43,7 +43,7 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
   static var previews: some View {
-    ContentView()
+    TopView()
   }
 }
 
@@ -54,7 +54,6 @@ struct ButtonView: View {
   let bounds = UIScreen.main.bounds
   let type: ButtonType
   let baseColor: Color
-  let textColor: Color
   
   init(_ text: String, model:TopViewModel, type: ButtonType) {
     self.text  = text
@@ -63,28 +62,27 @@ struct ButtonView: View {
     self.type = type
     switch type {
     case .create:
-      baseColor = Color.white
-      textColor = Color.baseColor
+      baseColor = Color.baseBlue
     case .login:
-      baseColor = Color.baseColor
-      textColor = Color.white
+      baseColor = Color.baseLightBlue
     }
   }
   
   var body: some View {
     Button(action: {
+      // タップした挙動
       
     }) {
       Text(self.text)
         .font(.custom(FontName.basic, size: 28))
         .minimumScaleFactor(0.1)
-        .foregroundColor(textColor)
+        .foregroundColor(Color.white)
         .frame(width: width, height: height)
         .background(baseColor)
         .cornerRadius(height / 2)
         .overlay(
           RoundedRectangle(cornerRadius: height / 2)
-            .stroke(Color.baseColor, lineWidth: 3)
+            .stroke(baseColor, lineWidth: 3)
         )
     }
   }
